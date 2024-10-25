@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #0d4907;
+    --secondary-color: #eab9e1;
+    --background-gradient-start: rgba(178, 207, 154, 1);
+    --background-gradient-end: rgba(234, 185, 225, 1);
+    --input-border-color: #ccc;
+    --input-focus-border-color: #0d4907;
+    --input-focus-shadow: rgba(13, 73, 7, 0.5);
+    --error-color: red;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(90deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
+    background-image: url(bg.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--input-border-color);
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input:focus {
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 8px var(--input-focus-shadow);
+    outline: none;
+  }
+  
+  button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #cccccc;
+    color: #fff;
+    font-size: 1rem;
+    cursor: not-allowed;
+    transition: background-color 0.3s;
+  }
+  
+  button:enabled {
+    cursor: pointer;
+    background-color: var(--primary-color);
+  }
+  
+  button:enabled:hover {
+    background-color: #1b750b;
+  }
+  
+  .error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    height: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
+      max-width: 90%;
+    }
+  
+    input, button {
+      font-size: 1rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+  
+    .container {
+      padding: 1rem;
+      max-width: 100%;
+    }
+  
+    input, button {
+      font-size: 0.875rem;
+    }
+  
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+  
